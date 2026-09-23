@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# OpenCode runtime state (plugin-owned)
+.opencode/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local runtime artifacts (large, regenerable)
+*.viser
+*.mp4
+*.log

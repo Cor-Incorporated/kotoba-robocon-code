@@ -1,0 +1,33 @@
+[
+  {
+    "id": "P01",
+    "result": "'Observer' object has no attribute 'handle_timeout'",
+    "real_lcm_receives": 0,
+    "meaning": "Actual retrieved worker method fails before reading."
+  },
+  {
+    "id": "P02",
+    "subscriptions": 0,
+    "meaning": "Callbacks exist but constructor never registers them."
+  },
+  {
+    "id": "P03",
+    "internal_monitor_entered": true,
+    "boot_ready_written": false,
+    "clock_nonce_received": 777,
+    "meaning": "Even synthesized successful stand does not notify API."
+  },
+  {
+    "id": "P04",
+    "internal_monitor_entered": true,
+    "last_sample_age_s": 5.01,
+    "samples": 3,
+    "clock_nonce": null,
+    "meaning": "Clock and fresh continuous states are not required by this manager."
+  },
+  {
+    "id": "P05",
+    "passive_flag_reads": 0,
+    "meaning": "Actual trigger is height crossing, not declared passive-entry event."
+  }
+]

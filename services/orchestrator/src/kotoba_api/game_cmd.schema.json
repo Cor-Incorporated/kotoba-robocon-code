@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["move", "stop", "end", "strike", "program", "unclear"]
+    },
+    "direction": {
+      "type": "string",
+      "enum": ["forward", "back", "left", "right", "turn_left", "turn_right", "turn_around"]
+    },
+    "size": {
+      "type": "string",
+      "enum": ["normal", "small"]
+    },
+    "amount_key": {
+      "type": "string",
+      "enum": ["m_025", "m_05", "m_1", "m_15", "m_2", "deg_15", "deg_30", "deg_45", "deg_90", "deg_180", "normal", "small"]
+    },
+    "steps": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "string",
+            "enum": ["forward", "back", "left", "right", "turn_left", "turn_right", "turn_around"]
+          },
+          "amount_key": {
+            "type": "string",
+            "enum": ["m_025", "m_05", "m_1", "m_15", "m_2", "deg_15", "deg_30", "deg_45", "deg_90", "deg_180", "normal", "small"]
+          }
+        },
+        "required": ["direction", "amount_key"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["type"],
+  "additionalProperties": false
+}

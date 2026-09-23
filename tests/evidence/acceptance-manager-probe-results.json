@@ -1,0 +1,95 @@
+[
+  {
+    "scenario": "positive_control",
+    "ready_published": true,
+    "exitcode": null,
+    "fake_elapsed_s": 11.52,
+    "last_sim_time_s": 11.519999999989523,
+    "continuous_valid_before_ready_s": 11.51,
+    "gateway_stub_sends": 130,
+    "state_packets": 1152,
+    "clock_packets": 1152,
+    "ready": {
+      "boot_nonce": 777,
+      "z": 0.82,
+      "tilt_deg": 0.0,
+      "verified_at": 1011.5199999999895,
+      "standing": true,
+      "bursts": 1
+    },
+    "stdout": "passive detected t+0.0s\nSTAND_VERIFIED nonce=777 bursts=1 z=0.820\n"
+  },
+  {
+    "scenario": "missing_nonce",
+    "ready_published": false,
+    "exitcode": 3,
+    "fake_elapsed_s": 40.01,
+    "last_sim_time_s": null,
+    "continuous_valid_before_ready_s": 40.0,
+    "gateway_stub_sends": 260,
+    "state_packets": 4001,
+    "clock_packets": 0,
+    "ready": null,
+    "stdout": "passive detected t+0.0s\nSTAND_VERIFY_TIMEOUT\n"
+  },
+  {
+    "scenario": "frozen_sim_clock",
+    "ready_published": true,
+    "exitcode": null,
+    "fake_elapsed_s": 11.52,
+    "last_sim_time_s": 0.0,
+    "continuous_valid_before_ready_s": 11.51,
+    "gateway_stub_sends": 130,
+    "state_packets": 1152,
+    "clock_packets": 1152,
+    "ready": {
+      "boot_nonce": 777,
+      "z": 0.82,
+      "tilt_deg": 0.0,
+      "verified_at": 1011.5199999999895,
+      "standing": true,
+      "bursts": 1
+    },
+    "stdout": "passive detected t+0.0s\nSTAND_VERIFIED nonce=777 bursts=1 z=0.820\n"
+  },
+  {
+    "scenario": "posture_gap",
+    "ready_published": true,
+    "exitcode": null,
+    "fake_elapsed_s": 11.52,
+    "last_sim_time_s": 11.519999999989523,
+    "continuous_valid_before_ready_s": 0.51,
+    "gateway_stub_sends": 130,
+    "state_packets": 1152,
+    "clock_packets": 1152,
+    "ready": {
+      "boot_nonce": 777,
+      "z": 0.82,
+      "tilt_deg": 0.0,
+      "verified_at": 1011.5199999999895,
+      "standing": true,
+      "bursts": 1
+    },
+    "stdout": "passive detected t+0.0s\nSTAND_VERIFIED nonce=777 bursts=1 z=0.820\n"
+  },
+  {
+    "scenario": "state_gap",
+    "ready_published": true,
+    "exitcode": null,
+    "fake_elapsed_s": 11.52,
+    "last_sim_time_s": 11.519999999989523,
+    "continuous_valid_before_ready_s": 0.51,
+    "gateway_stub_sends": 130,
+    "state_packets": 852,
+    "clock_packets": 1152,
+    "ready": {
+      "boot_nonce": 777,
+      "z": 0.82,
+      "tilt_deg": 0.0,
+      "verified_at": 1011.5199999999895,
+      "standing": true,
+      "bursts": 1
+    },
+    "stdout": "passive detected t+0.0s\nSTAND_VERIFIED nonce=777 bursts=1 z=0.820\n"
+  }
+]

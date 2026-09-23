@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Intent envelope — proposed, not a live API",
+  "description": "Only semantic output from the LLM. Approval, safety, velocity, host, tool and program fields are forbidden.",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "decision": {
+          "const": "execute"
+        },
+        "target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,127}$"
+          },
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true
+        },
+        "avoid_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 8,
+          "uniqueItems": true
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "schema_version",
+        "decision",
+        "target_ids",
+        "avoid_ids",
+        "explanation"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "decision": {
+          "const": "clarify"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "candidate_target_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,127}$"
+          },
+          "minItems": 0,
+          "maxItems": 8,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "decision",
+        "question",
+        "candidate_target_ids"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0"
+        },
+        "decision": {
+          "const": "reject"
+        },
+        "reason_code": {
+          "enum": [
+            "unknown_target",
+            "unsupported_action",
+            "contradictory_constraints",
+            "untrusted_instruction",
+            "invalid_input"
+          ]
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      },
+      "required": [
+        "schema_version",
+        "decision",
+        "reason_code",
+        "explanation"
+      ]
+    }
+  ]
+}
